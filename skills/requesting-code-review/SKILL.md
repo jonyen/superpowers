@@ -33,6 +33,11 @@ HEAD_SHA=$(git rev-parse HEAD)
 
 Dispatch a `general-purpose` subagent, filling the template at [code-reviewer.md](code-reviewer.md)
 
+Choose the reviewer's model per
+[model-selection.md](../using-superpowers/references/model-selection.md),
+scaled to the diff's size, complexity, and risk — and specify it explicitly
+in the dispatch.
+
 **Placeholders:**
 - `{DESCRIPTION}` - Brief summary of what you built
 - `{PLAN_OR_REQUIREMENTS}` - What it should do
