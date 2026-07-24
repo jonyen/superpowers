@@ -32,6 +32,25 @@ Tiers are defined generically so they apply on any harness:
 Model lineups change. Prefer the current generation of whichever model fills
 each tier, not a pinned version.
 
+## Unmapped models
+
+When the available models don't appear in the mapping above:
+
+- **Map by relative position, not name.** Rank what the harness offers by
+  capability (vendor tier naming, price, context size). The cheapest fills
+  the cheap/fast tier, the strongest fills most-capable/frontier, and
+  whatever sits between them is standard.
+- **Fewer models than tiers: round up.** With only two models, cheap/fast
+  takes the smaller and every other tier takes the larger. Turn count beats
+  token price — a too-weak model costs more than a too-strong one.
+- **One model only: still specify it.** Pinning it keeps dispatches
+  deterministic when the lineup later grows; the tier rules then govern how
+  much you hand each subagent, not which model runs it.
+- **Never invent a model ID.** Use only names the harness's dispatch tool
+  documents as valid. If a chosen name is rejected, fall back to explicitly
+  specifying the session's model — an explicit fallback is visible and
+  fixable; a silently omitted field is neither.
+
 ## Turn count beats token price
 
 Wall-clock and context cost scale with how many turns a subagent takes, and
