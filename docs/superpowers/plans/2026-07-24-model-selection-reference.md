@@ -28,7 +28,7 @@
 **Interfaces:**
 - Produces: the file path `skills/using-superpowers/references/model-selection.md`, referenced by Tasks 2–5 as `../using-superpowers/references/model-selection.md`.
 
-- [ ] **Step 1: Write the file with exactly this content**
+- [x] **Step 1: Write the file with exactly this content**
 
 ````markdown
 # Model Selection for Subagent Dispatch
@@ -98,12 +98,12 @@ fix diffs take a cheap-to-mid tier.
 | Fix-loop escalation (rounds 4-5) | One tier above the stuck implementer |
 ````
 
-- [ ] **Step 2: Verify the file exists and links resolve**
+- [x] **Step 2: Verify the file exists and links resolve**
 
 Run: `ls skills/using-superpowers/references/model-selection.md && grep -c "Fable" skills/using-superpowers/references/model-selection.md`
 Expected: the path printed, then `1`
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add skills/using-superpowers/references/model-selection.md
@@ -121,7 +121,7 @@ git commit -m "Add shared model-selection reference for subagent dispatch"
 - Consumes: `../using-superpowers/references/model-selection.md` from Task 1.
 - Produces: nothing used by later tasks.
 
-- [ ] **Step 1: Replace the section body**
+- [x] **Step 1: Replace the section body**
 
 Replace the entire `## Model Selection` section (heading through the last
 task-complexity bullet, currently lines 157–192) with exactly:
@@ -148,17 +148,17 @@ Do not touch the `[MODEL]` placeholders in `implementer-prompt.md`,
 `task-reviewer-prompt.md`, or `re-review-prompt.md` — they already require
 an explicit model.
 
-- [ ] **Step 2: Verify the shrink**
+- [x] **Step 2: Verify the shrink**
 
 Run: `awk '/^## Model Selection/,/^## The Task Loop/' skills/subagent-driven-development/SKILL.md | wc -l && grep -c "model-selection.md" skills/subagent-driven-development/SKILL.md`
 Expected: first number ≤ 20 (was ~37), second number `1`
 
-- [ ] **Step 3: Verify no orphaned rule text remains**
+- [x] **Step 3: Verify no orphaned rule text remains**
 
 Run: `grep -c "Turn count beats token price" skills/subagent-driven-development/SKILL.md`
 Expected: `0` (exit code 1 from grep is the pass signal)
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add skills/subagent-driven-development/SKILL.md
@@ -175,7 +175,7 @@ git commit -m "Point subagent-driven-development at shared model-selection refer
 **Interfaces:**
 - Consumes: `../using-superpowers/references/model-selection.md` from Task 1.
 
-- [ ] **Step 1: Insert the note**
+- [x] **Step 1: Insert the note**
 
 After the line:
 
@@ -192,12 +192,12 @@ scaled to the diff's size, complexity, and risk — and specify it explicitly
 in the dispatch.
 ```
 
-- [ ] **Step 2: Verify**
+- [x] **Step 2: Verify**
 
 Run: `grep -c "model-selection.md" skills/requesting-code-review/SKILL.md`
 Expected: `1`
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add skills/requesting-code-review/SKILL.md
@@ -214,7 +214,7 @@ git commit -m "Add model-selection guidance to requesting-code-review"
 **Interfaces:**
 - Consumes: `../using-superpowers/references/model-selection.md` from Task 1.
 
-- [ ] **Step 1: Insert the note**
+- [x] **Step 1: Insert the note**
 
 After the line:
 
@@ -231,12 +231,12 @@ cheap-to-standard tier per
 and specify the model explicitly on every dispatch in the batch.
 ```
 
-- [ ] **Step 2: Verify**
+- [x] **Step 2: Verify**
 
 Run: `grep -c "model-selection.md" skills/dispatching-parallel-agents/SKILL.md`
 Expected: `1`
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add skills/dispatching-parallel-agents/SKILL.md
@@ -253,7 +253,7 @@ git commit -m "Add model-selection guidance to dispatching-parallel-agents"
 **Interfaces:**
 - Consumes: `../using-superpowers/references/model-selection.md` from Task 1.
 
-- [ ] **Step 1: Append the sentence**
+- [x] **Step 1: Append the sentence**
 
 At the end of the existing paragraph:
 
@@ -267,12 +267,12 @@ append (same paragraph, after the final period):
  If you do dispatch any subagent, choose its model per `../using-superpowers/references/model-selection.md` and specify it explicitly.
 ```
 
-- [ ] **Step 2: Verify**
+- [x] **Step 2: Verify**
 
 Run: `grep -c "model-selection.md" skills/executing-plans/SKILL.md`
 Expected: `1`
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add skills/executing-plans/SKILL.md
@@ -289,22 +289,22 @@ git commit -m "Mention model-selection reference in executing-plans"
 **Interfaces:**
 - Consumes: all files from Tasks 1–5.
 
-- [ ] **Step 1: Every dispatching skill references the file exactly once**
+- [x] **Step 1: Every dispatching skill references the file exactly once**
 
 Run: `grep -rc "model-selection.md" skills/subagent-driven-development/SKILL.md skills/requesting-code-review/SKILL.md skills/dispatching-parallel-agents/SKILL.md skills/executing-plans/SKILL.md`
 Expected: each of the four lines ends in `:1`
 
-- [ ] **Step 2: No skill retains a full inline copy of the tier rules**
+- [x] **Step 2: No skill retains a full inline copy of the tier rules**
 
 Run: `grep -rl "Turn count beats token price" skills/ | sort`
 Expected: only `skills/using-superpowers/references/model-selection.md`
 
-- [ ] **Step 3: Relative links resolve**
+- [x] **Step 3: Relative links resolve**
 
 Run: `for f in skills/subagent-driven-development skills/requesting-code-review skills/dispatching-parallel-agents skills/executing-plans; do (cd "$f" && ls ../using-superpowers/references/model-selection.md >/dev/null) && echo "$f OK"; done`
 Expected: four `... OK` lines
 
-- [ ] **Step 4: Commit the plan checkboxes and finish**
+- [x] **Step 4: Commit the plan checkboxes and finish**
 
 ```bash
 git add docs/superpowers/plans/2026-07-24-model-selection-reference.md
