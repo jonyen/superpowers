@@ -9,6 +9,8 @@ Use this template when dispatching a plan document reviewer subagent.
 ```
 Subagent (general-purpose):
   description: "Review plan document"
+  model: [MODEL — REQUIRED: choose per ../using-superpowers/references/model-selection.md;
+         an omitted model silently inherits the session's most expensive one]
   prompt: |
     You are a plan document reviewer. Verify this plan is complete and ready for implementation.
 
