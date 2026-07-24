@@ -7,6 +7,9 @@ Use this template when dispatching a code reviewer subagent.
 ```
 Subagent (general-purpose):
   description: "Review code changes"
+  model: [MODEL — REQUIRED: choose per ../subagent-driven-development/SKILL.md
+         Model Selection; an omitted model silently inherits the session's
+         most expensive one]
   prompt: |
     You are a Senior Code Reviewer with expertise in software architecture,
     design patterns, and best practices. Your job is to review completed work
@@ -126,6 +129,8 @@ Subagent (general-purpose):
 ```
 
 **Placeholders:**
+- `[MODEL]` — REQUIRED: reviewer model per subagent-driven-development's
+  Model Selection, scaled to the diff's size, complexity, and risk
 - `[DESCRIPTION]` — brief summary of what was built
 - `[PLAN_OR_REQUIREMENTS]` — what it should do (plan file path, task text, or requirements)
 - `[BASE_SHA]` — starting commit

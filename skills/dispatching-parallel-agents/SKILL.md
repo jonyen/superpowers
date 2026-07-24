@@ -76,6 +76,11 @@ Subagent (general-purpose): "Fix tool-approval-race-conditions.test.ts failures"
 
 Multiple dispatch calls in one response = parallel execution. One per response = sequential.
 
+Specify each agent's model explicitly — see subagent-driven-development's
+Model Selection. Scoped, independent tasks like these take a cheap-to-mid
+tier; an omitted model inherits your session's, on every dispatch in the
+batch at once.
+
 ### 4. Review and Integrate
 
 When agents return:
