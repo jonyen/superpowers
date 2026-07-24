@@ -43,11 +43,18 @@ Single source of truth, derived from the existing Model Selection section in
    Fable (frontier). Note that lineups change: prefer the current generation
    of each tier. Other harnesses: use the platform's equivalent tiers rather
    than pinned names that would go stale.
-4. **Turn count beats token price** (kept verbatim in spirit from the
+4. **Unmapped models.** Rules for harnesses whose models the table doesn't
+   cover: rank by relative position rather than name; round *up* when there
+   are fewer models than tiers (a too-weak model costs more than a
+   too-strong one); still pin the model when the harness offers only one;
+   and never invent a model ID — if a name is rejected, fall back to
+   explicitly naming the session's model, so the field is never silently
+   omitted.
+5. **Turn count beats token price** (kept verbatim in spirit from the
    existing section): the cheapest models routinely take 2–3× the turns on
    multi-step work and can cost more overall. Mid-tier is the floor for
    reviewers and for implementers working from prose.
-5. **Role-based quick table** mapping default tiers:
+6. **Role-based quick table** mapping default tiers:
    | Role | Default tier |
    |---|---|
    | Implementer (complete code in plan) | Cheap |
