@@ -76,6 +76,11 @@ Subagent (general-purpose): "Fix tool-approval-race-conditions.test.ts failures"
 
 Multiple dispatch calls in one response = parallel execution. One per response = sequential.
 
+Parallel investigators are usually scoped, independent tasks: default to a
+cheap-to-standard tier per
+[model-selection.md](../using-superpowers/references/model-selection.md),
+and specify the model explicitly on every dispatch in the batch.
+
 ### 4. Review and Integrate
 
 When agents return:
